@@ -1,0 +1,154 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal; 
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+img {
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+h2 {
+    font-size: 1.5em; 
+    color: #333;
+}
+p {
+    font-size: 1em;
+    color: #777;}
+
+/* Body */
+.cabecalho {
+    width: 100%;
+    height: 150px;
+    background-color: #777;
+    text-align: center;
+}
+.cabecalho p{
+    margin-top: 100px;
+}
+
+.resultado {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.jogo {
+    width: 600px;
+    height: 600px;
+    margin: 20px auto;
+}
+/* Jogo */
+/* #q1 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+    float: left;
+    text-align: center;
+}
+#q2 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+    border-left: solid 2px;
+    float: left;
+    text-align: center;
+}
+#q3 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-bottom: solid 2px;
+    border-left: solid 2px;
+    float: left;
+    text-align: center;
+}
+#q4 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+    float: left;
+    text-align: center;
+}
+#q5 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+    border-left: solid 2px;
+    float: left;
+    text-align: center;
+}
+#q6 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    border-left: solid 2px;
+    float: left;
+    text-align: center;
+}
+#q7 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-top: solid 2px;
+    border-right: solid 2px;
+    float: left;
+    text-align: center;
+}
+#q8 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-top: solid 2px;
+    border-right: solid 2px;
+    border-left: solid 2px;
+    float: left;
+    text-align: center;
+}
+#q9 {
+    flex:1;
+    padding: 0 10px;
+    height: 100px;
+    width: 100px;
+    border-top: solid 2px;
+    border-left: solid 2px;
+    float: left;
+    text-align: center;
+}
+*/
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+.botoes button {
+    margin: 10px;
+} 

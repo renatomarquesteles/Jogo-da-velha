@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>Jogo da velha</h1>
+    </header>
+    <div class="resultado">
+        <p>Teste</p>
+    </div>
+    <div class="jogo">
+        <canvas id="jogo1" width="600" height="600" onclick="desenho(event)"></canvas>
+    </div>
+    <div class="botoes">
+        <button onclick="vez(1)">Começar com X  </button>   
+        <button onclick="vez(0)">Começar com O</button>
+        <button onclick="novoJogo()">New game</button>
+    </div>
+</body>
+
+</html>
