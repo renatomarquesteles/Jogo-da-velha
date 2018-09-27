@@ -182,7 +182,7 @@ function desenho(event) {
 function bola(x, y) {    // função pra desenhar a bola
     context.beginPath();
     context.arc(x, y, 60, 0 * Math.PI, 360 * Math.PI / 180);
-    context.lineWidth = 2;
+    context.lineWidth = 20;
     context.strokeStyle = '#F50057';
     context.stroke();
 }
@@ -197,7 +197,7 @@ function xis(x, y) {     // função pra desenhar o X
     context.lineTo(x + 50, y + 50)
     context.moveTo(x, y)
     context.lineTo(x - 50, y + 50)
-    context.lineWidth = 2;
+    context.lineWidth = 20;
     context.strokeStyle = '#512DA8';
     context.stroke();
 }
@@ -291,9 +291,6 @@ function verifica() {
         }
     }
     //Empate
-
-    // console.log(tabuleiro);
-    // console.log(tabuleiro.every(x => x !== null));
     else if (tabuleiro.every(x => x !== null)){
         document.getElementById("vencedor").innerHTML = "Deu velha!";
         trava();
