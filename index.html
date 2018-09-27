@@ -6,17 +6,17 @@
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="css/style.css" />
     <script src="main.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 </head>
 
-<body>
+<body class="principal">
     <header class="cabecalho">
-        <h1>Jogo da velha</h1>
+        <div>Jogo da velha</div>
     </header>
     <div class="botoes">
+        <p><button onclick="novoJogo()">New game</button></p>
         <p><button onclick="vez(1)">Começar com X  </button></p> 
         <p><button onclick="vez(0)">Começar com O</button></p>
-        <p><button onclick="novoJogo()">New game</button></p>
     </div>
     <div class="resultado">
         <p id="vencedor"></p>
@@ -24,6 +24,9 @@
     <div class="jogo">
         <canvas id="jogo1" width="600" height="600" onclick="desenho(event)"></canvas>
     </div>
+    <footer class="rodape">
+        © 2018 todos os direitos reservados à Renato Marques Teles
+    </footer>
 </body>
 
 </html>

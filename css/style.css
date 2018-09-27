@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     font-size: 100%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal; 
     box-sizing: border-box;
     border: none;
@@ -30,12 +30,20 @@ p {
 .cabecalho {
     width: 100%;
     height: 150px;
-    background-color: #777;
+    background-color: #0288D1;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.cabecalho p{
-    margin-top: 100px;
+.cabecalho div{
+    color: #fff;
+    font-size: 56pt;
+    font-weight: bold;
+    font-family: 'Acme', sans-serif;
+    text-shadow: 3px 3px #333;
 }
+
 /* Body */
 .resultado {
     text-align: center;
@@ -50,8 +58,25 @@ p {
 .botoes {
     display: flex;
     justify-content: center;
-    float: left;
+    text-align: center;
 }
 .botoes button {
+    font-weight: bold;
     margin: 10px;
+    box-shadow: 3px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    /* background-color: #29B6F6; */
+    color: #fff;
+    background-image: linear-gradient(130deg, #81D4FA, #0288D1);
 } 
+.rodape {
+    width: 100%;
+    height: 50px;
+    background-color: #0288D1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}

@@ -15,9 +15,25 @@ window.onload = function () {   // essa função será executada no carregamento
     context.lineTo(200, 600);
     context.moveTo(400, 0);
     context.lineTo(400, 600);
+
+    // Criando um gradient
+    // var gradient=context.createLinearGradient(0,0,800,0);
+    // gradient.addColorStop("0","#81D4FA");
+    // // gradient.addColorStop("0.1","cyan");
+    // // gradient.addColorStop("0.2","silver");
+    // // gradient.addColorStop("0.3","cyan");
+    // // gradient.addColorStop("0.4","silver");
+    // // gradient.addColorStop("0.5","cyan");
+    // // gradient.addColorStop("0.6","silver");
+    // // gradient.addColorStop("0.7","cyan");
+    // // gradient.addColorStop("0.8","silver");
+    // // gradient.addColorStop("0.9","cyan");
+    // gradient.addColorStop("1.0","#0288D1");
+
+
     //Configurar linha
     context.lineWidth = 2;      // largura da linha
-    context.strokeStyle = 'red';        // estilo da linha
+    context.strokeStyle = '#757575';        // estilo da linha
     //Desenhar linhas
     context.stroke();
 }
@@ -35,12 +51,14 @@ function novoJogo(){
     context.moveTo(400, 0);
     context.lineTo(400, 600);
     context.lineWidth = 2;
-    context.strokeStyle = 'red';
+    context.strokeStyle = '#757575';
     context.stroke();
     // Reseta o vetor
     for(var i=0;i<9;i++){
         tabuleiro[i] = null;
     }
+
+    document.getElementById("vencedor").innerHTML = "";
 }
 
 function posicaoMouse(canvas, event) {       
@@ -165,7 +183,7 @@ function bola(x, y) {    // função pra desenhar a bola
     context.beginPath();
     context.arc(x, y, 60, 0 * Math.PI, 360 * Math.PI / 180);
     context.lineWidth = 2;
-    context.strokeStyle = 'red';
+    context.strokeStyle = '#F50057';
     context.stroke();
 }
 
@@ -180,7 +198,7 @@ function xis(x, y) {     // função pra desenhar o X
     context.moveTo(x, y)
     context.lineTo(x - 50, y + 50)
     context.lineWidth = 2;
-    context.strokeStyle = 'red';
+    context.strokeStyle = '#512DA8';
     context.stroke();
 }
 
@@ -274,9 +292,9 @@ function verifica() {
     }
     //Empate
 
-    console.log(tabuleiro);
-    console.log(tabuleiro.every(x => x !== null));
-    if (tabuleiro.every(x => x !== null)){
+    // console.log(tabuleiro);
+    // console.log(tabuleiro.every(x => x !== null));
+    else if (tabuleiro.every(x => x !== null)){
         document.getElementById("vencedor").innerHTML = "Deu velha!";
         trava();
     }
