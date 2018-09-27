@@ -328,7 +328,9 @@ function verifica() {
     }
     //Empate
     else if (tabuleiro.every(x => x !== null)){
-        document.getElementById("vencedor").innerHTML = "Deu velha!";
+        document.getElementById("WinX").innerHTML = "";
+        document.getElementById("WinO").innerHTML = "";
+        document.getElementById("msgVencedor").innerHTML = "Deu velha!";
         trava();
     }
 }
