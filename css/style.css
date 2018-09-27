@@ -26,7 +26,7 @@ p {
     font-size: 1em;
     color: #777;}
 
-/* Body */
+/* Header */
 .cabecalho {
     width: 100%;
     height: 150px;
@@ -36,7 +36,7 @@ p {
 .cabecalho p{
     margin-top: 100px;
 }
-
+/* Body */
 .resultado {
     text-align: center;
     margin: 20px auto;
@@ -47,104 +47,6 @@ p {
     height: 600px;
     margin: 20px auto;
 }
-/* Jogo */
-/* #q1 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-bottom: solid 2px;
-    border-right: solid 2px;
-    float: left;
-    text-align: center;
-}
-#q2 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-bottom: solid 2px;
-    border-right: solid 2px;
-    border-left: solid 2px;
-    float: left;
-    text-align: center;
-}
-#q3 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-bottom: solid 2px;
-    border-left: solid 2px;
-    float: left;
-    text-align: center;
-}
-#q4 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-top: solid 2px;
-    border-bottom: solid 2px;
-    border-right: solid 2px;
-    float: left;
-    text-align: center;
-}
-#q5 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-top: solid 2px;
-    border-bottom: solid 2px;
-    border-right: solid 2px;
-    border-left: solid 2px;
-    float: left;
-    text-align: center;
-}
-#q6 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-top: solid 2px;
-    border-bottom: solid 2px;
-    border-left: solid 2px;
-    float: left;
-    text-align: center;
-}
-#q7 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-top: solid 2px;
-    border-right: solid 2px;
-    float: left;
-    text-align: center;
-}
-#q8 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-top: solid 2px;
-    border-right: solid 2px;
-    border-left: solid 2px;
-    float: left;
-    text-align: center;
-}
-#q9 {
-    flex:1;
-    padding: 0 10px;
-    height: 100px;
-    width: 100px;
-    border-top: solid 2px;
-    border-left: solid 2px;
-    float: left;
-    text-align: center;
-}
-*/
 .botoes {
     display: flex;
     justify-content: center;
