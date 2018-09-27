@@ -13,16 +13,16 @@
     <header class="cabecalho">
         <h1>Jogo da velha</h1>
     </header>
+    <div class="botoes">
+        <p><button onclick="vez(1)">Começar com X  </button></p> 
+        <p><button onclick="vez(0)">Começar com O</button></p>
+        <p><button onclick="novoJogo()">New game</button></p>
+    </div>
     <div class="resultado">
-        <p>Teste</p>
+        <p id="vencedor"></p>
     </div>
     <div class="jogo">
         <canvas id="jogo1" width="600" height="600" onclick="desenho(event)"></canvas>
-    </div>
-    <div class="botoes">
-        <button onclick="vez(1)">Começar com X  </button>   
-        <button onclick="vez(0)">Começar com O</button>
-        <button onclick="novoJogo()">New game</button>
     </div>
 </body>
 

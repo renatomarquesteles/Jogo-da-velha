@@ -1,6 +1,6 @@
 var canvas, context;
 var numero;     // variável que irá determinar se será desenhado bola ou X
-var tabuleiro = new Array(9); // cria um vetor com as 9 posições do jogo, receberá 0 para bola e 1 para X
+var tabuleiro = new Array(9).fill(null); // cria um vetor com as 9 posições do jogo, receberá 0 para bola e 1 para X
 window.onload = function () {   // essa função será executada no carregamento da página
     canvas = document.getElementById('jogo1');
     context = canvas.getContext('2d');
@@ -184,95 +184,108 @@ function xis(x, y) {     // função pra desenhar o X
     context.stroke();
 }
 
-
+function naonulo(x) {
+    return x != null;
+}
 // Verificação se ganhou ou não
 function verifica() {
     // linhas
     if((tabuleiro[0] == tabuleiro[1]) && (tabuleiro[1] == tabuleiro[2]) && (tabuleiro[0] != null)){
         if(tabuleiro[1] == 0){
-            alert("Bola ganhou!")
-           novoJogo();
+            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            trava();
         }
         else{
-            alert("X ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            trava();
         }
     }
     else if((tabuleiro[3] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[5]) && (tabuleiro[3] != null)){
         if(tabuleiro[3] == 0){
-            alert("Bola ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            trava();
         }
         else{
-            alert("X ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            trava();
         }
     }
     else if((tabuleiro[6] == tabuleiro[7]) && (tabuleiro[7] == tabuleiro[8]) && (tabuleiro[6] != null)){
         if(tabuleiro[6] == 0){
-            alert("Bola ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            trava();
         }
         else{
-            alert("X ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            trava();
         }
     }
     // colunas
     else if((tabuleiro[0] == tabuleiro[3]) && (tabuleiro[3] == tabuleiro[6]) && (tabuleiro[0] != null)){
         if(tabuleiro[0] == 0){
-            alert("Bola ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            trava();
         }
         else{
-            alert("X ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            trava();
         }
     }
     else if((tabuleiro[1] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[7]) && (tabuleiro[1] != null)){
         if(tabuleiro[1] == 0){
-            alert("Bola ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            trava();
         }
         else{
-            alert("X ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            trava();
         }
     }
     else if((tabuleiro[2] == tabuleiro[5]) && (tabuleiro[5] == tabuleiro[8]) && (tabuleiro[2] != null)){
         if(tabuleiro[2] == 0){
-            alert("Bola ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            trava();
         }
         else{
-            alert("X ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            trava();
         }
     }
     // diagonais
     else if((tabuleiro[0] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[8]) && (tabuleiro[0] != null)){
         if(tabuleiro[0] == 0){
-            alert("Bola ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            trava();
         }
         else{
-            alert("X ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            trava();
         }
     }
     else if((tabuleiro[2] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[6]) && (tabuleiro[2] != null)){
         if(tabuleiro[2] == 0){
-            alert("Bola ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            trava();
         }
         else{
-            alert("X ganhou!")
-            novoJogo();
+            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            trava();
         }
     }
     //Empate
-    // if(tabuleiro[i] != null) {
-    //         alert("Deu velha!");
-    //         novoJogo();
-    //     }
+
+    console.log(tabuleiro);
+    console.log(tabuleiro.every(x => x !== null));
+    if (tabuleiro.every(x => x !== null)){
+        document.getElementById("vencedor").innerHTML = "Deu velha!";
+        trava();
+    }
+}
+
+function trava() {      // impede que o usuário continue jogando após anunciado o vencedor
+    for(var i = 0; i<tabuleiro.length; i++) {
+        if(tabuleiro[i] == null){
+            tabuleiro[i] = 3;       // preenche as posições vazias do tabuleiro
+        }
+    }
 }

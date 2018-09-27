@@ -50,6 +50,7 @@ p {
 .botoes {
     display: flex;
     justify-content: center;
+    float: left;
 }
 .botoes button {
     margin: 10px;
