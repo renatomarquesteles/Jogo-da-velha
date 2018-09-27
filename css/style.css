@@ -49,11 +49,17 @@ p {
     text-align: center;
     margin: 20px auto;
 }
-
-.jogo {
-    width: 600px;
-    height: 600px;
-    margin: 20px auto;
+#WinX {
+    font-weight: bold;
+    font-size: 24pt;
+    font-family: 'Courier', sans-serif;
+    color: #512DA8;
+}
+#WinO {
+    font-weight: bold;
+    font-size: 24pt;
+    font-family: 'Courier', sans-serif;
+    color: #F50057;
 }
 .botoes {
     display: flex;
@@ -70,6 +76,13 @@ p {
     color: #fff;
     /* background-image: linear-gradient(130deg, #81D4FA, #0288D1); */
 } 
+.jogo {
+    width: 600px;
+    height: 600px;
+    margin: 20px auto;
+}
+
+/* Rodapé */
 .rodape {
     width: 100%;
     height: 50px;
@@ -80,3 +93,4 @@ p {
     text-align: center;
     align-items: center;
 }
+

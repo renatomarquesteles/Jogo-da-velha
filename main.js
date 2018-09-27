@@ -39,7 +39,8 @@ window.onload = function () {   // essa função será executada no carregamento
 }
 
 function novoJogo(){
-    context.clearRect(0, 0, canvas.width, canvas.height);   // função que limpa o canvas
+    // Limpa o canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
     // Desenho do tabuleiro novamente
     context.beginPath();
     context.moveTo(0, 200);
@@ -57,8 +58,10 @@ function novoJogo(){
     for(var i=0;i<9;i++){
         tabuleiro[i] = null;
     }
-
-    document.getElementById("vencedor").innerHTML = "";
+    // Limpas as mensagens
+    document.getElementById("WinO").innerHTML = "";
+    document.getElementById("WinX").innerHTML = "";
+    document.getElementById("msgVencedor").innerHTML = "";
 }
 
 function posicaoMouse(canvas, event) {       
@@ -71,6 +74,7 @@ function posicaoMouse(canvas, event) {
 
 function vez(num) {
     numero = num        // 0 para bola, 1 para X
+    novoJogo();
 }
 
 function desenho(event) {
@@ -210,83 +214,115 @@ function verifica() {
     // linhas
     if((tabuleiro[0] == tabuleiro[1]) && (tabuleiro[1] == tabuleiro[2]) && (tabuleiro[0] != null)){
         if(tabuleiro[1] == 0){
-            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            document.getElementById("WinO").innerHTML = "O";
+            document.getElementById("WinX").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
         else{
-            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            document.getElementById("WinX").innerHTML = "X";
+            document.getElementById("WinO").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
     }
     else if((tabuleiro[3] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[5]) && (tabuleiro[3] != null)){
         if(tabuleiro[3] == 0){
-            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            document.getElementById("WinO").innerHTML = "O";
+            document.getElementById("WinX").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
         else{
-            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            document.getElementById("WinX").innerHTML = "X";
+            document.getElementById("WinO").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
     }
     else if((tabuleiro[6] == tabuleiro[7]) && (tabuleiro[7] == tabuleiro[8]) && (tabuleiro[6] != null)){
         if(tabuleiro[6] == 0){
-            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            document.getElementById("WinO").innerHTML = "O";
+            document.getElementById("WinX").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
         else{
-            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            document.getElementById("WinX").innerHTML = "X";
+            document.getElementById("WinO").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
     }
     // colunas
     else if((tabuleiro[0] == tabuleiro[3]) && (tabuleiro[3] == tabuleiro[6]) && (tabuleiro[0] != null)){
         if(tabuleiro[0] == 0){
-            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            document.getElementById("WinO").innerHTML = "O";
+            document.getElementById("WinX").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
         else{
-            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            document.getElementById("WinX").innerHTML = "X";
+            document.getElementById("WinO").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
     }
     else if((tabuleiro[1] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[7]) && (tabuleiro[1] != null)){
         if(tabuleiro[1] == 0){
-            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            document.getElementById("WinO").innerHTML = "O";
+            document.getElementById("WinX").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
         else{
-            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            document.getElementById("WinX").innerHTML = "X";
+            document.getElementById("WinO").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
     }
     else if((tabuleiro[2] == tabuleiro[5]) && (tabuleiro[5] == tabuleiro[8]) && (tabuleiro[2] != null)){
         if(tabuleiro[2] == 0){
-            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            document.getElementById("WinO").innerHTML = "O";
+            document.getElementById("WinX").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
         else{
-            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            document.getElementById("WinX").innerHTML = "X";
+            document.getElementById("WinO").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
     }
     // diagonais
     else if((tabuleiro[0] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[8]) && (tabuleiro[0] != null)){
         if(tabuleiro[0] == 0){
-            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            document.getElementById("WinO").innerHTML = "O";
+            document.getElementById("WinX").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
         else{
-            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            document.getElementById("WinX").innerHTML = "X";
+            document.getElementById("WinO").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
     }
     else if((tabuleiro[2] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[6]) && (tabuleiro[2] != null)){
         if(tabuleiro[2] == 0){
-            document.getElementById("vencedor").innerHTML = "Bola ganhou!";
+            document.getElementById("WinO").innerHTML = "O";
+            document.getElementById("WinX").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
         else{
-            document.getElementById("vencedor").innerHTML = "X ganhou!";
+            document.getElementById("WinX").innerHTML = "X";
+            document.getElementById("WinO").innerHTML = "";
+            document.getElementById("msgVencedor").innerHTML = "VENCEDOR!";
             trava();
         }
     }
