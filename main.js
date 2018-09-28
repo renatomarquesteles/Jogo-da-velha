@@ -6,56 +6,15 @@ var tabuleiro = new Array(9).fill(null); // cria um vetor com as 9 posições do
 window.onload = function () {   // essa função será executada no carregamento da página
     canvas = document.getElementById('jogo1');
     context = canvas.getContext('2d');
-    // Inicia path, apaga desenhos anteriores
-    context.beginPath();
-    //Desenhar tabuleiro
-    context.moveTo(0, 200);     // determina ponto inicial
-    context.lineTo(600, 200);   // faz a linha a partir do ponto inicial até o ponto referenciado
-    context.moveTo(0, 400);
-    context.lineTo(600, 400);
-    context.moveTo(200, 0);
-    context.lineTo(200, 600);
-    context.moveTo(400, 0);
-    context.lineTo(400, 600);
-
-    // Criando um gradient
-    // var gradient=context.createLinearGradient(0,0,800,0);
-    // gradient.addColorStop("0","#81D4FA");
-    // // gradient.addColorStop("0.1","cyan");
-    // // gradient.addColorStop("0.2","silver");
-    // // gradient.addColorStop("0.3","cyan");
-    // // gradient.addColorStop("0.4","silver");
-    // // gradient.addColorStop("0.5","cyan");
-    // // gradient.addColorStop("0.6","silver");
-    // // gradient.addColorStop("0.7","cyan");
-    // // gradient.addColorStop("0.8","silver");
-    // // gradient.addColorStop("0.9","cyan");
-    // gradient.addColorStop("1.0","#0288D1");
-
-
-    //Configurar linha
-    context.lineWidth = 2;      // largura da linha
-    context.strokeStyle = '#757575';        // estilo da linha
-    //Desenhar linhas
-    context.stroke();
+    // Desenha o tabuleiro
+    desTabuleiro();
 }
 
 function novoJogo(){
     // Limpa o canvas
     context.clearRect(0, 0, canvas.width, canvas.height);
     // Desenho do tabuleiro novamente
-    context.beginPath();
-    context.moveTo(0, 200);
-    context.lineTo(600, 200);
-    context.moveTo(0, 400);
-    context.lineTo(600, 400);
-    context.moveTo(200, 0);
-    context.lineTo(200, 600);
-    context.moveTo(400, 0);
-    context.lineTo(400, 600);
-    context.lineWidth = 2;
-    context.strokeStyle = '#757575';
-    context.stroke();
+    desTabuleiro();
     // Reseta o vetor
     for(var i=0;i<9;i++){
         tabuleiro[i] = null;
@@ -68,6 +27,8 @@ function novoJogo(){
     linha = 0;
     // Reseta img de empate (Deu velha)
     document.getElementById("imgVelha").innerHTML = "";
+    //Reseta o setInterval das linhas
+    clearInterval(counterms);
 }
 function zeraPlacar (){
     contO = 0;
@@ -244,12 +205,7 @@ function verifica() {
                 trava();
             }
             //Desenho da linha
-            context.beginPath();
-            context.moveTo(0, 100);
-            context.lineTo(600, 100);
-            context.lineWidth = 10;
-            context.strokeStyle = 'red';
-            context.stroke();
+            counterms = setInterval(linha1,1);
             linha = 1;
         }
         else if((tabuleiro[3] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[5]) && (tabuleiro[3] != null)){
@@ -270,12 +226,7 @@ function verifica() {
                 trava();
             }
             //Desenho da linha
-            context.beginPath();
-            context.moveTo(0, 300);
-            context.lineTo(600, 300);
-            context.lineWidth = 10;
-            context.strokeStyle = 'red';
-            context.stroke();
+            linha2();
             linha = 1;
         }
         else if((tabuleiro[6] == tabuleiro[7]) && (tabuleiro[7] == tabuleiro[8]) && (tabuleiro[6] != null)){
@@ -296,12 +247,7 @@ function verifica() {
                 trava();
             }
             //Desenho da linha
-            context.beginPath();
-            context.moveTo(0, 500);
-            context.lineTo(600, 500);
-            context.lineWidth = 10;
-            context.strokeStyle = 'red';
-            context.stroke();
+            linha3();
             linha = 1;
         }
         // colunas
@@ -323,12 +269,7 @@ function verifica() {
                 trava();
             }
             //Desenho da linha
-            context.beginPath();
-            context.moveTo(100, 0);
-            context.lineTo(100, 600);
-            context.lineWidth = 10;
-            context.strokeStyle = 'red';
-            context.stroke();
+            coluna1();
             linha = 1;
         }
         else if((tabuleiro[1] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[7]) && (tabuleiro[1] != null)){
@@ -349,12 +290,7 @@ function verifica() {
                 trava();
             }
             //Desenho da linha
-            context.beginPath();
-            context.moveTo(300, 0);
-            context.lineTo(300, 600);
-            context.lineWidth = 10;
-            context.strokeStyle = 'red';
-            context.stroke();
+            coluna2();
             linha = 1;
         }
         else if((tabuleiro[2] == tabuleiro[5]) && (tabuleiro[5] == tabuleiro[8]) && (tabuleiro[2] != null)){
@@ -375,12 +311,7 @@ function verifica() {
                 trava();
             }
             //Desenho da linha
-            context.beginPath();
-            context.moveTo(500, 0);
-            context.lineTo(500, 600);
-            context.lineWidth = 10;
-            context.strokeStyle = 'red';
-            context.stroke();
+            coluna3();
             linha = 1;
         }
         // diagonais
@@ -402,12 +333,7 @@ function verifica() {
                 trava();
             }
             //Desenho da linha
-            context.beginPath();
-            context.moveTo(0, 0);
-            context.lineTo(600, 600);
-            context.lineWidth = 10;
-            context.strokeStyle = 'red';
-            context.stroke();
+            diagonal1();
             linha = 1;
         }
         else if((tabuleiro[2] == tabuleiro[4]) && (tabuleiro[4] == tabuleiro[6]) && (tabuleiro[2] != null)){
@@ -428,12 +354,7 @@ function verifica() {
                 trava();
             }
             //Desenho da linha
-            context.beginPath();
-            context.moveTo(600, 0);
-            context.lineTo(0, 600);
-            context.lineWidth = 10;
-            context.strokeStyle = 'red';
-            context.stroke();
+            diagonal2();
             linha = 1;
         }
         //Empate
@@ -455,4 +376,92 @@ function trava() {      // impede que o usuário continue jogando após anunciad
             tabuleiro[i] = 3;       // preenche as posições vazias do tabuleiro
         }
     }
+}
+function desTabuleiro(){
+    // Inicia path, apaga desenhos anteriores 
+    context.beginPath();
+    //Desenhar tabuleiro
+    context.moveTo(0, 200);     // determina ponto inicial
+    context.lineTo(600, 200);   // faz a linha a partir do ponto inicial até o ponto referenciado
+    context.moveTo(0, 400);
+    context.lineTo(600, 400);
+    context.moveTo(200, 0);
+    context.lineTo(200, 600);
+    context.moveTo(400, 0);
+    context.lineTo(400, 600);
+    context.lineWidth = 2;      // largura da linha
+    context.strokeStyle = '#757575';        // estilo da linha
+    //Desenhar linhas
+    context.stroke();
+}
+var x=0;
+var counterms;
+function linha1() {
+    // context.save(); //salva o canvas
+    // context.clearRect(0, 0,canvas.width, canvas.height) // limpa o canvas
+    // desTabuleiro();
+    context.beginPath();    //começa o desenho
+    context.moveTo(0, 100);
+    context.lineTo(x, 100); // final: 600,100
+    x=x+5;
+    context.lineWidth = 10;
+    context.strokeStyle = 'red';
+    context.stroke();
+    // context.restore();  //restaura o canvas
+}
+function linha2() {
+    context.beginPath();
+    context.moveTo(0, 300);
+    context.lineTo(600, 300);
+    context.lineWidth = 10;
+    context.strokeStyle = 'red';
+    context.stroke();
+}
+function linha3() {
+    context.beginPath();
+    context.moveTo(0, 500);
+    context.lineTo(600, 500);
+    context.lineWidth = 10;
+    context.strokeStyle = 'red';
+    context.stroke();
+}
+function coluna1() {
+    context.beginPath();
+    context.moveTo(100, 0);
+    context.lineTo(100, 600);
+    context.lineWidth = 10;
+    context.strokeStyle = 'red';
+    context.stroke();
+}
+function coluna2() {
+    context.beginPath();
+    context.moveTo(300, 0);
+    context.lineTo(300, 600);
+    context.lineWidth = 10;
+    context.strokeStyle = 'red';
+    context.stroke();
+}
+function coluna3() {
+    context.beginPath();
+    context.moveTo(500, 0);
+    context.lineTo(500, 600);
+    context.lineWidth = 10;
+    context.strokeStyle = 'red';
+    context.stroke();
+}
+function diagonal1() {
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(600, 600);
+    context.lineWidth = 10;
+    context.strokeStyle = 'red';
+    context.stroke();
+}
+function diagonal2() {
+    context.beginPath();
+    context.moveTo(600, 0);
+    context.lineTo(0, 600);
+    context.lineWidth = 10;
+    context.strokeStyle = 'red';
+    context.stroke();
 }
