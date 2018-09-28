@@ -441,7 +441,7 @@ function verifica() {
             document.getElementById("WinX").innerHTML = "";
             document.getElementById("WinO").innerHTML = "";
             document.getElementById("msgVencedor").innerHTML = "Deu velha!";
-            document.getElementById("imgVelha").innerHTML = "<img src=\"css/img/granny.png\">";
+            document.getElementById("imgVelha").innerHTML = "<img src=\"css/img/granny2.png\">";
             document.getElementById("placar").innerHTML = "O:"+contO+" - X:"+contX;
             trava();
             linha = 1;
@@ -455,13 +455,4 @@ function trava() {      // impede que o usuário continue jogando após anunciad
             tabuleiro[i] = 3;       // preenche as posições vazias do tabuleiro
         }
     }
-}
-
-function risco() {
-    context.beginPath();
-    context.moveTo(0, 0);
-    context.lineTo(600, 200);
-    context.lineWidth = 2;
-    context.strokeStyle = 'red';
-    context.stroke();
 }
