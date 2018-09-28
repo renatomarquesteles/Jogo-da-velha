@@ -7,21 +7,30 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class="principal">
     <header class="cabecalho">
         <div>Jogo da velha</div>
     </header>
+    
     <div class="botoes">
-        <p><button onclick="novoJogo()">New game</button></p>
+        <p><button onclick="novoJogo()">Novo Jogo</button></p>
         <p><button onclick="vez(1)">Começar com X  </button></p> 
         <p><button onclick="vez(0)">Começar com O</button></p>
+        <p><button onclick="zeraPlacar()">Resetar Placar</button></p>
     </div>
     <div class="resultado">
         <p id="WinO"></p>
         <p id="WinX"></p>
         <p id="msgVencedor"></p>
+    </div>
+    <div class="resultado">
+        <p id="placar"></p>
+    </div>
+    <div class="sobrepor">
+        <p id="imgVelha"></p>
     </div>
     <div class="jogo">
         <canvas id="jogo1" width="600" height="600" onclick="desenho(event)"></canvas>

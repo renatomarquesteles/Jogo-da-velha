@@ -46,6 +46,7 @@ p {
 
 /* Body */
 .resultado {
+    height: 40px;
     text-align: center;
     margin: 20px auto;
 }
@@ -62,6 +63,7 @@ p {
     color: #F50057;
 }
 .botoes {
+    font-size: 12pt;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -74,9 +76,42 @@ p {
     border-radius: 5px;
     background-color: #29B6F6;
     color: #fff;
-    /* background-image: linear-gradient(130deg, #81D4FA, #0288D1); */
+    /* background-image: linear-gradient(130deg, #81D4FA, #0288D1); */   
 } 
+.botoes button:hover {
+    color: #0039f3;
+}
+.botoes button:active {
+    animation-name: click;
+    animation-duration: 100ms;
+    animation-iteration-count: Infinite;
+    animation-timing-function: ease; 
+}
+@keyframes click {
+    from {
+        font-size: 100%;
+    }
+    to {
+        font-size: 90%;
+    }
+}
+#placar {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.sobrepor {
+    position:absolute ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
 .jogo {
+    /* position:absolute; */
     width: 600px;
     height: 600px;
     margin: 20px auto;
