@@ -111,21 +111,7 @@ p {
 
 }
 .jogo {
-    /* position:absolute; */
     width: 600px;
     height: 600px;
     margin: 20px auto;
 }
-
-/* Rodapé */
-.rodape {
-    width: 100%;
-    height: 50px;
-    background-color: #0288D1;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
